@@ -26,6 +26,29 @@ const PSC = [
   { code: "R499", label: "Other Professional Services" },
 ];
 
+const DIFFERENTIATORS = [
+  { head: "Direct principal accountability", body: "One accountable owner from quote to closeout — no layers, no handoffs, no drift." },
+  { head: "Proven DOD past performance", body: "Prime contractor to Norfolk Naval Shipyard, delivered on schedule and in full compliance." },
+  { head: "Procurement-to-invoice fluency", body: "Quote, technical certification, OPSEC compliance, and WAWF invoicing handled end to end." },
+  { head: "Lean, zero-overhead delivery", body: "A low cost structure that passes efficiency straight through to the customer." },
+];
+
+const REGISTRATIONS = [
+  { label: "Business Type", value: "Woman-Owned Small Business" },
+  { label: "SAM.gov", value: "Active" },
+  { label: "UEI", value: "GMU2TGGHJD23" },
+  { label: "CAGE", value: "6GXK0" },
+];
+
+const TEAMING_OFFERS = [
+  "Subcontract scopes",
+  "Surge & overflow support",
+  "Teaming on RFIs & Sources Sought",
+  "NDA-ready",
+];
+
+const CAP_PDF = "/Kawah_Systems_Capability_Statement.pdf";
+
 const MAILTO =
   "mailto:info@kawahsystems.com?subject=Request%20for%20Capability%20Statement%20%E2%80%94%20Kawah%20Systems%20Inc.";
 
@@ -196,6 +219,27 @@ export default function KawahSystems() {
           </div>
         </section>
 
+        {/* ─────────────── DIFFERENTIATORS ─────────────── */}
+        <section className="ks-band" id="differentiators">
+          <div className="ks-shell">
+            <header className="ks-section-head ks-reveal">
+              <p className="ks-eyebrow">
+                Differentiators <span className="ks-eyebrow-sep">/</span> Why Kawah Systems
+              </p>
+              <span className="ks-section-count">Provable</span>
+            </header>
+            <div className="ks-diff-grid">
+              {DIFFERENTIATORS.map((d, i) => (
+                <div key={i} className="ks-diff ks-reveal" style={{ transitionDelay: `${i * 70}ms` }}>
+                  <span className="ks-diff-mark" aria-hidden="true">—</span>
+                  <h3 className="ks-diff-head">{d.head}</h3>
+                  <p className="ks-diff-body">{d.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
         {/* ─────────────── PROVEN PERFORMANCE (DARK BAND) ─────────────── */}
         <section className="ks-band ks-band--dark" id="performance">
           <div className="ks-shell">
@@ -233,6 +277,46 @@ export default function KawahSystems() {
           </div>
         </section>
 
+        {/* ─────────────── PRINCIPAL ─────────────── */}
+        <section className="ks-band" id="principal">
+          <div className="ks-shell">
+            <header className="ks-section-head ks-reveal">
+              <p className="ks-eyebrow">
+                Leadership <span className="ks-eyebrow-sep">/</span> Principal
+              </p>
+              <span className="ks-section-count">Founder-led</span>
+            </header>
+            <div className="ks-principal-grid ks-reveal">
+              <div className="ks-principal-id">
+                <p className="ks-principal-name">Jebeh Kawah</p>
+                <p className="ks-principal-role">Founder &amp; Principal</p>
+              </div>
+              <div className="ks-principal-bio">
+                <p>
+                  Jebeh Kawah founded Kawah Systems in 2012 and leads every engagement directly.
+                  She holds a Master of Science in Computer Science with a cybersecurity emphasis
+                  and a Scaled Agile (SAFe) certification, and brings roughly twelve years of
+                  enterprise business-intelligence and process-management experience from a
+                  Fortune 50 telecommunications enterprise to federal delivery.
+                </p>
+                <p>
+                  Her approach is hands-on and exacting: one accountable principal from quote to
+                  closeout — lean to run, rigorous on standards, accountable end to end.
+                </p>
+                <div className="ks-principal-xp">
+                  <p className="ks-xp-label">Selected Experience</p>
+                  <p className="ks-xp-text">
+                    Designed and deployed a national-scale digital recruitment and assessment
+                    platform for the Liberia Revenue Authority — 10,000+ applicants screened across
+                    19 roles, with integrity controls, security review, and live high-stakes
+                    administration.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* ─────────────── TEAMING ─────────────── */}
         <section className="ks-band ks-teaming" id="teaming">
           <div className="ks-shell ks-teaming-inner">
@@ -242,8 +326,16 @@ export default function KawahSystems() {
               </p>
               <p className="ks-teaming-text">
                 Kawah Systems partners with prime contractors as a Woman-Owned Small Business
-                teaming partner — supporting small-business subcontracting goals on federal work
-                with direct principal accountability and zero bureaucratic drag.
+                subcontractor — helping primes meet small-business subcontracting goals while
+                bringing direct principal accountability and federal procurement fluency.
+              </p>
+              <ul className="ks-teaming-offers">
+                {TEAMING_OFFERS.map((o, i) => (
+                  <li key={i}>{o}</li>
+                ))}
+              </ul>
+              <p className="ks-teaming-note">
+                Past-performance references available on request.
               </p>
             </div>
             <a href={MAILTO} className="ks-teaming-cta ks-reveal">
@@ -253,10 +345,60 @@ export default function KawahSystems() {
           </div>
         </section>
 
-        {/* ─────────────── FOOTER ─────────────── */}
-        <footer className="ks-footer" id="codes">
+        {/* ─────────────── REGISTRATIONS & CODES ─────────────── */}
+        <section className="ks-band" id="codes">
           <div className="ks-shell">
-            <div className="ks-footer-grid">
+            <header className="ks-section-head ks-reveal">
+              <p className="ks-eyebrow">
+                Registrations &amp; Codes <span className="ks-eyebrow-sep">/</span> Company Data
+              </p>
+              <a href={CAP_PDF} className="ks-pdf-btn" download>
+                Download Capability Statement (PDF)
+                <ArrowUpRight size={15} strokeWidth={2.25} />
+              </a>
+            </header>
+            <div className="ks-codes-grid ks-reveal">
+              <div className="ks-codes-col">
+                <p className="ks-foot-label">Registrations</p>
+                <div className="ks-reg-list">
+                  {REGISTRATIONS.map((r, i) => (
+                    <div key={i} className="ks-reg-line">
+                      <span className="ks-reg-k">{r.label}</span>
+                      <span className="ks-reg-v ks-mono">{r.value}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              <div className="ks-codes-col">
+                <p className="ks-foot-label">NAICS</p>
+                <ul className="ks-code-list">
+                  {NAICS.map((x) => (
+                    <li key={x.code} className="ks-code-row">
+                      <span className="ks-mono ks-code">{x.code}</span>
+                      <span className="ks-code-label">{x.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div className="ks-codes-col">
+                <p className="ks-foot-label">PSC</p>
+                <ul className="ks-code-list">
+                  {PSC.map((x) => (
+                    <li key={x.code} className="ks-code-row">
+                      <span className="ks-mono ks-code">{x.code}</span>
+                      <span className="ks-code-label">{x.label}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* ─────────────── FOOTER ─────────────── */}
+        <footer className="ks-footer">
+          <div className="ks-shell">
+            <div className="ks-footer-grid ks-footer-grid--contact">
               <div className="ks-foot-col">
                 <p className="ks-foot-label">Location</p>
                 <p className="ks-foot-value">Levittown, Pennsylvania<br />United States</p>
@@ -273,26 +415,7 @@ export default function KawahSystems() {
                 </p>
               </div>
               <div className="ks-foot-col">
-                <p className="ks-foot-label">NAICS</p>
-                <ul className="ks-code-list">
-                  {NAICS.map((x) => (
-                    <li key={x.code} className="ks-code-row">
-                      <span className="ks-mono ks-code">{x.code}</span>
-                      <span className="ks-code-label">{x.label}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="ks-foot-col">
-                <p className="ks-foot-label">PSC</p>
-                <ul className="ks-code-list">
-                  {PSC.map((x) => (
-                    <li key={x.code} className="ks-code-row">
-                      <span className="ks-mono ks-code">{x.code}</span>
-                      <span className="ks-code-label">{x.label}</span>
-                    </li>
-                  ))}
-                </ul>
+                <p className="ks-foot-label">Identifiers</p>
                 <div className="ks-foot-ids">
                   <div><p className="ks-foot-label ks-foot-label--tight">UEI</p><p className="ks-mono ks-code">GMU2TGGHJD23</p></div>
                   <div><p className="ks-foot-label ks-foot-label--tight">CAGE</p><p className="ks-mono ks-code">6GXK0</p></div>
@@ -399,7 +522,7 @@ const CSS = `
 .ks-eyebrow--dark .ks-eyebrow-sep{color:var(--line-dark);}
 .ks-band{padding-top:96px;padding-bottom:96px;border-top:1px solid var(--line);}
 .ks-band--dark{background:var(--ink);color:var(--paper);border-top:none;}
-.ks-section-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:40px;gap:16px;}
+.ks-section-head{display:flex;align-items:baseline;justify-content:space-between;padding-bottom:40px;gap:16px;flex-wrap:wrap;}
 .ks-section-count{font-family:var(--mono);font-size:11px;letter-spacing:0.18em;text-transform:uppercase;color:var(--slate);}
 .ks-section-count--dark{color:var(--ink-muted);}
 
@@ -440,6 +563,37 @@ const CSS = `
 /* teaming */
 .ks-teaming-inner{display:flex;align-items:center;justify-content:space-between;gap:48px;}
 .ks-teaming-main{max-width:64ch;}
+.ks-teaming-offers{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px;list-style:none;padding:0;}
+.ks-teaming-offers li{font-family:var(--mono);font-size:10px;letter-spacing:0.12em;text-transform:uppercase;color:var(--ink);border:1px solid var(--line);padding:7px 11px;background:var(--white);}
+.ks-teaming-note{font-size:13px;color:var(--slate);margin-top:16px;}
+
+/* differentiators */
+.ks-diff-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line);}
+.ks-diff{padding:30px 30px 34px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);}
+.ks-diff-mark{color:var(--cobalt);font-weight:700;font-size:15px;}
+.ks-diff-head{font-size:clamp(1.05rem,1.6vw,1.3rem);font-weight:600;letter-spacing:-0.02em;color:var(--ink);margin:8px 0 8px;}
+.ks-diff-body{font-size:14px;line-height:1.55;color:var(--slate);max-width:44ch;}
+
+/* principal */
+.ks-principal-grid{display:grid;grid-template-columns:280px 1fr;border-top:1px solid var(--line);}
+.ks-principal-id{padding:30px 28px 30px 0;}
+.ks-principal-name{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:800;letter-spacing:-0.03em;color:var(--ink);line-height:1;}
+.ks-principal-role{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--slate);margin-top:14px;}
+.ks-principal-bio{padding:30px 0 30px 44px;border-left:1px solid var(--line);}
+.ks-principal-bio p{font-size:1.02rem;line-height:1.62;color:var(--ink);max-width:64ch;}
+.ks-principal-bio p + p{margin-top:16px;color:var(--slate);}
+.ks-principal-xp{margin-top:24px;padding-top:20px;border-top:1px solid var(--line);}
+.ks-xp-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--slate);margin-bottom:10px;}
+.ks-xp-text{font-size:14px;line-height:1.55;color:var(--ink);max-width:64ch;}
+
+/* registrations & codes */
+.ks-pdf-btn{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:var(--paper);font-size:12.5px;font-weight:600;padding:11px 16px;border:1px solid var(--ink);transition:background 130ms ease,border-color 130ms ease;}
+.ks-pdf-btn:hover{background:var(--cobalt);border-color:var(--cobalt);}
+.ks-codes-grid{display:grid;grid-template-columns:1.1fr 1fr 1fr;gap:44px;border-top:1px solid var(--line);padding-top:36px;}
+.ks-reg-list{display:flex;flex-direction:column;}
+.ks-reg-line{display:flex;align-items:baseline;justify-content:space-between;gap:14px;padding:11px 0;border-bottom:1px solid var(--line);}
+.ks-reg-k{font-family:var(--mono);font-size:10px;letter-spacing:0.14em;text-transform:uppercase;color:var(--slate);}
+.ks-reg-v{font-size:13px;font-weight:600;color:var(--ink);}
 .ks-teaming-main .ks-eyebrow{margin-bottom:20px;}
 .ks-teaming-text{font-size:clamp(1.05rem,1.7vw,1.35rem);line-height:1.5;letter-spacing:-0.01em;color:var(--ink);font-weight:500;}
 .ks-teaming-cta{display:inline-flex;align-items:center;gap:10px;flex-shrink:0;background:var(--ink);color:var(--paper);font-size:14px;font-weight:600;padding:16px 22px;border:1px solid var(--ink);transition:background 130ms ease,border-color 130ms ease,gap 130ms ease;}
@@ -478,6 +632,7 @@ const CSS = `
 /* footer */
 .ks-footer{border-top:1px solid var(--ink);background:var(--white);padding-top:72px;padding-bottom:40px;}
 .ks-footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;padding-bottom:64px;border-bottom:1px solid var(--line);}
+.ks-footer-grid--contact{grid-template-columns:1.2fr 1.2fr 1fr;}
 .ks-foot-label{font-family:var(--mono);font-size:10px;letter-spacing:0.2em;text-transform:uppercase;color:var(--slate);margin-bottom:16px;}
 .ks-foot-label--tight{margin-bottom:6px;}
 .ks-foot-value{font-size:14px;font-weight:500;color:var(--ink);line-height:1.6;}
@@ -504,6 +659,12 @@ const CSS = `
   .ks-register{grid-column:auto;border-left:0;border-top:1px solid var(--line);margin-top:56px;padding-top:8px;}
   .ks-reg-row{padding-left:0;}
   .ks-footer-grid{grid-template-columns:repeat(2,1fr);gap:36px;}
+  .ks-footer-grid--contact{grid-template-columns:1fr 1fr;}
+  .ks-diff-grid{grid-template-columns:1fr;}
+  .ks-principal-grid{grid-template-columns:1fr;}
+  .ks-principal-id{padding:0 0 4px;}
+  .ks-principal-bio{border-left:0;padding:18px 0 0;}
+  .ks-codes-grid{grid-template-columns:1fr;gap:28px;}
   .ks-coord{display:none;}
 }
 @media (max-width:720px){
