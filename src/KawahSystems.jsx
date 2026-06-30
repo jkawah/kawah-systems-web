@@ -331,7 +331,6 @@ function ProofRow({ label, value, muted }) {
 function Dot() { return <span className="ks-dot" aria-hidden="true">•</span>; }
 
 const CSS = `
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 .ks-root {
   /* light context */
@@ -346,7 +345,7 @@ const CSS = `
   --ink-muted:#94A8BD;   /* muted marble text on dark */
   --ink-soft:#E7ECF3;    /* body text on dark */
   --accent-dark:#7FA8FF; /* brighter cobalt for legibility on dark */
-  --sans:'Inter',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
+  --sans:'Inter','Inter Fallback',system-ui,-apple-system,'Helvetica Neue',Arial,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,'SF Mono',Menlo,monospace;
   --shell:1240px;
   background:var(--paper); color:var(--ink); font-family:var(--sans);
