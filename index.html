@@ -8,8 +8,31 @@
       name="description"
       content="Kawah Systems Inc. — Woman-Owned Small Business. Agile procurement and subcontractor oversight for federal missions."
     />
+
+    <!-- Fonts discovered at HTML parse time (not after JS) to prevent flash -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap"
+    />
+
     <style>
+      /* Fallback metrics matched to Inter so the swap causes no layout shift */
+      @font-face {
+        font-family: "Inter Fallback";
+        src: local("Arial");
+        ascent-override: 90.20%;
+        descent-override: 22.48%;
+        line-gap-override: 0.00%;
+        size-adjust: 107.40%;
+      }
       html, body { margin: 0; padding: 0; background: #F8FAFC; }
+      body {
+        font-family: "Inter", "Inter Fallback", system-ui, -apple-system,
+          "Helvetica Neue", Arial, sans-serif;
+      }
+      #root { min-height: 100vh; background: #F8FAFC; }
     </style>
   </head>
   <body>
