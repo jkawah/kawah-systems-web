@@ -475,7 +475,8 @@ const CSS = `
   -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; line-height:1.5;
 }
 .ks-root *,.ks-root *::before,.ks-root *::after{box-sizing:border-box;margin:0;padding:0;}
-.ks-root where(a){color:inherit;text-decoration:none;}
+.ks-root a{text-decoration:none;}
+.ks-root :where(a){color:inherit;}
 .ks-root ul{list-style:none;}
 .ks-shell{max-width:var(--shell);margin:0 auto;padding-left:32px;padding-right:32px;}
 .ks-mono{font-family:var(--mono);font-feature-settings:"tnum" 1;}
